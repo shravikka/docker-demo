@@ -12,7 +12,7 @@
      }
    }
    stage('docker build/push') {
-     def app = docker.build("shravikka/docker-nodejs-demo:$BUILD_NUMBER")
+     def app = docker.build "shravikka/docker-nodejs-demo:$BUILD_NUMBER"
      docker.withRegistry('', 'dockerhub') {
        app.push()
      }
